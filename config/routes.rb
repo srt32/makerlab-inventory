@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :inventories
-  resources :tools
+  resources :tools do
+    resources :checkouts
+  end
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'tools#index'
 end
