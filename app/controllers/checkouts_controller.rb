@@ -1,8 +1,9 @@
 class CheckoutsController < ApplicationController
-  before_action :find_tool
+  before_action :find_tool, skip: [:index]
   before_action :set_checkout, only: [:show, :edit, :update, :destroy]
 
   def index
+    @checkouts = Checkout.all
     @checkouts = @tool.checkouts
   end
 

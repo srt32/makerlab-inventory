@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :checkouts
   end
 
+  resources :checkouts, only: [:index]
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'tools#index'
 end
