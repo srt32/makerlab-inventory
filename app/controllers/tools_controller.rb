@@ -4,7 +4,7 @@ class ToolsController < ApplicationController
   def index
     @tools = Tool.all
     @inventories = Inventory.all
-    @checkouts = Checkout.all
+    @checkouts = Checkout.all  
   end
 
   def show

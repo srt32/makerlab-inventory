@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.1.1'
 
 gem 'airbrake'
 gem 'bourbon', '~> 3.2.1'
@@ -21,6 +21,8 @@ gem 'title'
 gem 'uglifier'
 gem 'unicorn'
 gem 'rails_admin'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 group :development do
   gem 'foreman'

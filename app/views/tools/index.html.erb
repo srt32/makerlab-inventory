@@ -3,14 +3,13 @@
 
 <!-- search form -->
 <h2>Search</h2>
-  <form accept-charset="UTF-8" action="/" id="site_search" method="get">
-    <div style="margin:0;padding:0;display:inline">
-      <input name="utf8" type="hidden" value="✓">
-    </div>
-    <input id="search" name="search" placeholder="Search Maker Lab Tools &amp; Inventory" type="text">
-    <input type="submit" value="Search">
-  </form>
 
+<%= form_tag tools_path, method: :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", name: :nil %>
+  </p>
+<% end %>
 
 <!-- tools -->
 <h2>Tools</h2>
