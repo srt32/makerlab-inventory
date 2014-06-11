@@ -8,6 +8,7 @@ class ToolsController < ApplicationController
   end
 
   def show
+    @checkout = @tool.checkouts.new
   end
 
   def new
