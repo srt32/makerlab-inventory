@@ -1,10 +1,10 @@
 class CheckoutsController < ApplicationController
-  before_action :find_tool, skip: [:index]
+  before_action :find_tool
+  skip_before_action :find_tool, only: [:index]   
   before_action :set_checkout, only: [:show, :edit, :update, :destroy]
 
   def index
     @checkouts = Checkout.all
-    @checkouts = @tool.checkouts
   end
 
   def show
@@ -36,8 +36,12 @@ class CheckoutsController < ApplicationController
   end
 
   def destroy
-    @checkout.destroy
-    redirect_to checkouts_url, notice: 'Checkout was successfully destroyed.'
+    @checkout = @tool.checkouts.
+
+    respond_to do |format|
+      format.html { redirect_to "/", notice: 'You successfully returned the item.' }
+      format.json { head :no_content }
+    end
   end
 
   private

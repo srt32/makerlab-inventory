@@ -10,13 +10,13 @@
   </thead>
 
   <tbody>
-    <% @tool.checkouts.each do |checkout| %>
+    <% @checkouts.each do |checkout| %>
       <tr>
         <td><%= checkout.email %></td>
         <td><%= checkout.tool_id %></td>
+        <td><%= link_to 'Return now',  self, confirm: 'Are you sure?', method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
