@@ -1,6 +1,6 @@
 class CheckoutsController < ApplicationController
   before_action :find_tool
-  skip_before_action :find_tool, only: [:index]   
+  skip_before_action :find_tool, only: [:index, :destroy]   
   before_action :set_checkout, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -36,7 +36,8 @@ class CheckoutsController < ApplicationController
   end
 
   def destroy
-    @checkout = @tool.checkouts.find(checkout_params)
+    @checkout.destroy
+    redirect_to root_url, notice: 'All checked out.'
   end
 
   private

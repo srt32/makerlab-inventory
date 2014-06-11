@@ -14,9 +14,8 @@
       <tr>
         <td><%= checkout.email %></td>
         <td><%= checkout.tool_id %></td>
-        <td><%= link_to 'Return now', checkout_path, confirm: 'Are you sure?', method: :delete %></td>
+        <td><%= link_to 'Return Item', [@tool, checkout], confirm: 'Are you sure?', method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
