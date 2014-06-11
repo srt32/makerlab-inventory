@@ -8,7 +8,7 @@ class CheckoutsController < ApplicationController
   end
 
   def show
-    @checkout = @tool.checkouts.find(params[:id])
+    @checkout = @tool.checkouts.find(checkout_params)
   end
 
   def new
@@ -36,12 +36,7 @@ class CheckoutsController < ApplicationController
   end
 
   def destroy
-    @checkout = @tool.checkouts.
-
-    respond_to do |format|
-      format.html { redirect_to "/", notice: 'You successfully returned the item.' }
-      format.json { head :no_content }
-    end
+    @checkout = @tool.checkouts.find(checkout_params)
   end
 
   private
