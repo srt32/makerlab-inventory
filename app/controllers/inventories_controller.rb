@@ -6,6 +6,16 @@ class InventoriesController < ApplicationController
     @inventories = Inventory.all
   end
 
+  def search
+    @inventories = Inventory.search do
+      keywords params[:query]
+    end.results
+
+    respond_to do |format|
+      format.html { render action: "../tools/index" }
+    end
+  end
+
   # GET /inventories/1
   def show
   end

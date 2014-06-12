@@ -23,6 +23,7 @@ gem 'unicorn'
 gem 'rails_admin'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+gem 'progress_bar'
 
 group :development do
   gem 'foreman'

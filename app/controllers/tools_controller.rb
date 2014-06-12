@@ -1,10 +1,20 @@
-class ToolsController < ApplicationController
+class ToolsController < ApplicationController 
   before_action :set_tool, only: [:show, :edit, :update, :destroy]
 
   def index
     @tools = Tool.all
     @inventories = Inventory.all
-    @checkouts = Checkout.all  
+    @checkouts = Checkout.all
+  end
+
+  def search
+    @tools = Tool.search do
+      keywords params[:query]
+    end.results
+
+    respond_to do |format|
+      format.html { render action: "index" }
+    end
   end
 
   def show

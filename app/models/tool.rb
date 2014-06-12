@@ -1,13 +1,10 @@
 class Tool < ActiveRecord::Base
   has_many :checkouts, dependent: :destroy
 
-  # searchable do
-  #   string :name
-  # end
+  validates :name,        presence: true
+  validates :location,    presence: true
 
-  # attr_accessor :name,
-  # 				:location
-
-  validates :name, presence: true
-
+  searchable do
+    text :name
+  end
 end
