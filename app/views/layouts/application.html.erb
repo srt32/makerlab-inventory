@@ -11,6 +11,15 @@
 
   <body class="<%= body_class %>">
     <%= render 'flashes' -%>
+
+    <div id="nav">
+      <ul>
+        <li><%= link_to 'search', home_path %></li>
+        <li><%= link_to 'ML', home_path %></li>
+        <li><%= link_to 'return', checkouts_path %></li>
+      </ul>
+    </div>
+
     <%= yield %>
     <%= render 'javascript' %>
   </body>

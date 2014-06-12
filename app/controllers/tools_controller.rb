@@ -7,16 +7,6 @@ class ToolsController < ApplicationController
     @checkouts = Checkout.all
   end
 
-  def search
-    @tools = Tool.search do
-      keywords params[:query]
-    end.results
-
-    respond_to do |format|
-      format.html { render action: "index" }
-    end
-  end
-
   def show
     @checkout = @tool.checkouts.new
   end

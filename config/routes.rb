@@ -1,24 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :inventories do
-    # setting up search
-    collection do
-      get :search
-    end
-  end
-
+  resources :inventories
   resources :tools do
-    # nested route
     resources :checkouts
-    
-    # setting up search
-    collection do
-      get :search
-    end
   end
-
+  
+  resources :searches, only: [:index]
   resources :checkouts, only: [:index, :destroy]
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  root to: 'tools#index'
+  root to: 'tools#index', as: 'home'
 end

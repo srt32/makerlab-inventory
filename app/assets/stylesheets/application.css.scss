@@ -7,14 +7,23 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 
+@import 'nav';
+@import 'search';
+
+
 
 html {
   border: 1px solid #d3d3d3;
-  color: black;
-  font-family: Helvetica;
+  color: gray;
+  font-family: 'Helvetica';
   height: 100%;
   margin: 0 auto;
-  max-width: 63em;
-  min-width: 47em;
+  max-width: 63em; /* 1024px - 16 */
+  min-width: 47em; /* 768 - 16 */
   padding: 1em;
+}
+
+a {
+	color: #d3d3d3;
+	text-decoration: none;
 }
