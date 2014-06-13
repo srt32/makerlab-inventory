@@ -2,58 +2,37 @@
 <section id="search-section">
   <%= form_tag searches_path, method: :get do %>
     <p>
-      <%= text_field_tag :query, params[:query], placeholder: "tap to search" %>
+      <%= text_field_tag :query, params[:query], placeholder: "tap to search." %>
       <%= submit_tag "Search" %>
     </p>
   <% end %>
+  <div>
+    <h3>see all inventory</h3>
+    <span>&darr;</span>
+  </div>
 </section>
 
 <!-- tools -->
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Current Quantity</th>
-      <th>Available</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<section id="tools-inventory">
+  <ul>
     <% @tools.each do |tool| %>
-      <tr>
-        <td><%= tool.name %></td>
-        <td><%= tool.location %></td>
-        <td><%= tool.quantity %></td>
-        <td><%= tool.available %></td>
-        <td><%= link_to 'Show', tool %></td>
-      </tr>
+      <li>
+        <p><%= tool.name %></p>
+        <p><%= tool.location %></p>
+        <p><%= tool.quantity %></p>
+        <p><%= tool.available %></p>
+        <p><%= link_to 'Show', tool %></p>
+      </li>  
     <% end %>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Stock</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  </ul>
+  <ul>  
     <% @inventories.each do |inventory| %>
-      <tr>
-        <td><%= inventory.name %></td>
-        <td><%= inventory.location %></td>
-        <td><%= inventory.stock %></td>
-        <td><%= link_to 'Show', inventory %></td>
-        <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
-        <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <li>
+        <p><%= inventory.name %></p>
+        <p><%= inventory.location %></p>
+        <p><%= inventory.stock %></p>
+        <p><%= link_to 'Show', inventory %></p>
+      </li>
     <% end %>
-  </tbody>
-</table>
-<br>
+  </ul>
+</section>

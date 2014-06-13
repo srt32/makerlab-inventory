@@ -1,23 +1,15 @@
-<h1>Listing checkouts</h1>
+<section>
+  <%= link_to 'Back', home_path %>
+  <% @checkouts.each do |checkout| %>
+    <ul>
+      <li><%= checkout.email %></li>
+    </ul>
 
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th>Tool</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div id="return">
+      <!-- <p><%= checkout.tool.name %></p>
+      <p><%= link_to 'Return Item', [@tool, checkout], confirm: 'Are you sure?', method: :delete %></p> -->
+    </div>
+  <% end %>
 
-  <tbody>
-    <% @checkouts.each do |checkout| %>
-      <tr>
-        <td><%= checkout.email %></td>
-        <td><%= checkout.tool.name %></td>
-        <td><%= link_to 'Return Item', [@tool, checkout], confirm: 'Are you sure?', method: :delete %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+</section>
 
-<%= link_to 'Back', root_path %>

@@ -1,0 +1,20 @@
+#tools-inventory {
+  width: 100%;
+  ul{
+    display: inline-block;
+    -webkit-margin-after: 0em;
+    -webkit-margin-before: 0em;
+    -webkit-padding-start: 0px;
+    li{
+      border: 1px solid #d3d3d3;
+      display: inline-block;
+      height: 15em;
+      margin-right: -4px;
+      width: 15em;
+      p{
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
