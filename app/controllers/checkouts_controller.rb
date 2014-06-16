@@ -21,7 +21,7 @@ class CheckoutsController < ApplicationController
   def create
     @checkout = @tool.checkouts.new(checkout_params)
     if @checkout.save
-      redirect_to root_url, notice: 'You successfully checked this tool out.'
+      redirect_to home_path, notice: 'You successfully checked this tool out.'
     else
       render :new
     end
@@ -29,7 +29,7 @@ class CheckoutsController < ApplicationController
 
   def update
     if @checkout.update(checkout_params)
-      redirect_to root_url, notice: 'Checkout was successfully updated.'
+      redirect_to home_path, notice: 'Checkout was successfully updated.'
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class CheckoutsController < ApplicationController
 
   def destroy
     @checkout.destroy
-    redirect_to root_url, notice: 'All checked out.'
+    redirect_to home_path, notice: 'All checked out.'
   end
 
   private
