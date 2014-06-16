@@ -89,4 +89,13 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { host: 'makerlab-inventory.com' }
+
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: "makerlab"
+      access_key_id: "AKIAJA22A333PR6VQ5FQ"
+      secret_access_key: "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"
+    }
+  }
 end
