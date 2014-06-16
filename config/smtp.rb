@@ -1,5 +1,5 @@
 SMTP_SETTINGS = {
-  address: ENV.fetch('SMTP_ADDRESS'), # example: 'smtp.sendgrid.net'
+  address: ENV.fetch('foo'), # example: 'smtp.sendgrid.net'
   authentication: :plain,
   domain: ENV.fetch('SMTP_DOMAIN'), # example: 'this-app.com'
   enable_starttls_auto: true,
