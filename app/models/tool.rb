@@ -10,6 +10,11 @@ class Tool < ActiveRecord::Base
     medium: '300x300>'
   }
 
+  do_not_validate_attachment_file_type :tool_image
+
+  attr_accessor :delete_asset
+  before_validation { self.tool_image.clear if self.delete_asset == '1' }
+
   searchable do
     text :name
   end
