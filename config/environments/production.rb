@@ -91,17 +91,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'makerlab-inventory.com' }
 
   config.paperclip_defaults = {
-    storage: :s3,
-    s3_credentials: {
-      bucket: "makerlab"
-      access_key_id: "AKIAJA22A333PR6VQ5FQ"
-      secret_access_key: "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"
-    }
-  }
-  config.paperclip_defaults = {
   :storage => :s3,
-  :url => ":s3_domain_url",
-  :path => ":class/:id.:style.:extension",
   :s3_credentials => {
     :bucket => ENV['AWS_BUCKET'],
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
