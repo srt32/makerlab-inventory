@@ -98,7 +98,6 @@ GEM
     haml (4.0.5)
       tilt
     high_voltage (2.1.0)
-    highline (1.6.21)
     hike (1.2.3)
     i18n (0.6.9)
     jquery-rails (3.1.0)
@@ -128,7 +127,6 @@ GEM
     newrelic_rpm (3.8.1.221)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
-    options (2.3.2)
     paperclip (4.1.1)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -136,10 +134,6 @@ GEM
       mime-types
     pg (0.17.1)
     polyglot (0.3.5)
-    pr_geohash (1.0.0)
-    progress_bar (1.0.2)
-      highline (~> 1.6.1)
-      options (~> 2.3.0)
     pry (0.10.0)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -187,8 +181,6 @@ GEM
     recipient_interceptor (0.1.2)
       mail
     remotipart (1.2.1)
-    rsolr (1.0.10)
-      builder (>= 2.1.2)
     rspec-core (3.0.1)
       rspec-support (~> 3.0.0)
     rspec-expectations (3.0.1)
@@ -235,14 +227,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    sunspot (2.1.1)
-      pr_geohash (~> 1.0)
-      rsolr (~> 1.0.7)
-    sunspot_rails (2.1.1)
-      nokogiri
-      rails (>= 3)
-      sunspot (= 2.1.1)
-    sunspot_solr (2.1.1)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -294,7 +278,6 @@ DEPENDENCIES
   newrelic_rpm (>= 3.7.3)
   paperclip
   pg
-  progress_bar
   pry-rails
   rack-timeout
   rails (~> 4.1.0)
@@ -307,8 +290,6 @@ DEPENDENCIES
   simplecov
   spring
   spring-commands-rspec
-  sunspot_rails
-  sunspot_solr
   timecop
   title
   uglifier

@@ -13,8 +13,8 @@ class Inventory < ActiveRecord::Base
   attr_accessor :delete_asset
   before_validation { self.inventory_image.clear if self.delete_asset == '1' }
 
-  searchable do
-    text :name
-  end
+  # searchable do
+  #   text :name
+  # end
 
 end
