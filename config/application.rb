@@ -29,6 +29,17 @@ module MakerlabInventory
       generate.view_specs false
     end
 
+    config.paperclip_defaults = {
+      :storage => :s3,
+      :url => ':s3_domain_url',
+      :path => '/:class/:attachment/:id_partition/:style/:filename',
+      :s3_credentials => {
+        :bucket => ENV['AWS_BUCKET'],
+        :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+        :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      }
+    }
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

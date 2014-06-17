@@ -17,7 +17,7 @@
   <ul>
     <% @tools.each do |tool| %>
       <li>
-        <%= image_tag tool.tool_image.url(:thumbnail) %>
+        <%= image_tag tool.tool_image.url(:square) %>
         <p><%= tool.name %></p>
         <p><%= tool.location %></p>
         <p><%= tool.quantity %></p>
