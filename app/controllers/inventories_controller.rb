@@ -53,6 +53,6 @@ class InventoriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def inventory_params
-      params.require(:inventory).permit(:name, :location, :stock)
+      params.require(:inventory).permit(:name, :location, :stock, :inventory_image_file_name, :inventory_image_content_type, :inventory_image_file_size, :inventory_image_updated_at )
     end
 end

@@ -29,6 +29,7 @@
   <ul>  
     <% @inventories.each do |inventory| %>
       <li>
+        <%= image_tag inventory.inventory_image.url(:square) %>
         <p><%= inventory.name %></p>
         <p><%= inventory.location %></p>
         <p><%= inventory.stock %></p>

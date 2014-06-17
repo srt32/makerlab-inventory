@@ -13,8 +13,6 @@
 /tmp/*
 
 
-heroku config:set S3_BUCKET_NAME=makerlab
-
+heroku config:set AWS_BUCKET=makerlab
 heroku config:set AWS_ACCESS_KEY_ID=AKIAJA22A333PR6VQ5FQ
-
 heroku config:set AWS_SECRET_ACCESS_KEY=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
