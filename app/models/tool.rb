@@ -16,7 +16,7 @@ class Tool < ActiveRecord::Base
   before_validation { self.tool_image.clear if self.delete_asset == '1' }
   
   def in_stock?
-    quantity > checkouts
+    quantity > checkouts.count
   end
 
   # searchable do
