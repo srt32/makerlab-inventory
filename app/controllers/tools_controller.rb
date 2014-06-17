@@ -2,7 +2,7 @@ class ToolsController < ApplicationController
   before_action :set_tool, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tools = Tool.all.select { |tool| tool.available? }
+    @tools = Tool.all.select { |tool| tool.in_stock? }
     @inventories = Inventory.all
     @checkouts = Checkout.all
   end
